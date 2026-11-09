@@ -1,9 +1,0 @@
-{%- comment -%} News entry in a list. Usage: {% include news-item.html post=post %} {%- endcomment -%}
-{%- assign n = include.post %}
-<li class="news-item">
-  <time class="news-date" datetime="{{ n.date | date: '%Y-%m-%d' }}">{{ n.date | date: "%-d %b %Y" }}</time>
-  <div class="news-body">
-    <h3><a href="{{ n.url | relative_url }}">{{ n.title }}</a></h3>
-    <p>{{ n.excerpt | strip_html | strip | truncatewords: 40 }}</p>
-  </div>
-</li>

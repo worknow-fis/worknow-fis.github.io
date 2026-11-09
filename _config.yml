@@ -1,6 +1,6 @@
 # ------------------------------------------------------------
 # WorKnow website: site settings
-# Most content lives in the _data and _posts folders, not here.
+# Most content lives in the _data folder, not here.
 # ------------------------------------------------------------
 
 title: WorKnow
@@ -43,16 +43,6 @@ kramdown:
   smart_quotes: ["apos", "rsquo", "ldquo", "rdquo"]
 permalink: pretty
 timezone: Europe/Rome
-excerpt_separator: "\n\n"
-
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      permalink: /news/:year/:title/
-
 exclude:
   - README.md
   - MIGRATION.md

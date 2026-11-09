@@ -2,26 +2,18 @@
 layout: default
 title: Home
 ---
-{%- assign p = site.project -%}
 <div class="page">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-text">
-      <p class="label">FIS Starting Grant · Sant’Anna School of Advanced Studies, Pisa</p>
       <h1 id="hero-title">Working Knowledge
         <small>The emergence of practitioners in late medieval and early modern Europe</small></h1>
       <p class="lead">WorKnow reconsiders how the Scientific Revolution and the Industrial Revolution emerged together. It reconstructs, in detail and over the long run, how practitioners and their practical knowledge arose in Europe.</p>
       <div class="actions">
         <a class="btn primary" href="{{ '/project/' | relative_url }}">About the project</a>
-        <a class="btn ghost" href="{{ '/events/' | relative_url }}">Events</a>
+        <a class="btn ghost" href="{{ '/team/' | relative_url }}">Meet the team</a>
       </div>
-      <dl class="facts">
-        <div><dt>Principal Investigator</dt><dd>{{ p.pi }}</dd></div>
-        <div><dt>Host institution</dt><dd>{{ p.host }}</dd></div>
-        <div><dt>Funding</dt><dd>{{ p.programme }}</dd></div>
-        <div><dt>Duration</dt><dd>{{ p.start }} – {{ p.end }}</dd></div>
-      </dl>
     </div>
-    {% include quadrant.svg %}
+    <div class="hero-mark">{% include project-logo.svg %}</div>
   </section>
 
   <section class="block" aria-labelledby="h-convergence">
@@ -31,12 +23,10 @@ title: Home
       <div class="field">
         <p class="label">History of science</p>
         <p>Studies of the sociological origins of the Scientific Revolution show the role of artisans and other practitioners in joining natural philosophy, mathematisation and experiment. Science appears as a collective, socially embedded process.</p>
-        <p class="cites">Zilsel 1942 · Rossi 1970 · Shapin and Schaffer 1985 · P. H. Smith 2004 · Long 2011</p>
       </div>
       <div class="field">
         <p class="label">Economic history</p>
         <p>Recent work revisits the thesis that practitioners made a key contribution to the Industrial Revolution, with practical mathematics a particularly telling field for linking economic and scientific change.</p>
-        <p class="cites">Cipolla 1969 · Berg 1994 · Mokyr 2002 · Kelly, Mokyr and Ó Gráda 2014 · Kelly and Ó Gráda 2022</p>
       </div>
     </div>
   </section>
@@ -50,25 +40,23 @@ title: Home
     </ul>
   </section>
 
-  <section class="block" aria-labelledby="h-news">
-    <div class="block-head"><h2 id="h-news">News</h2><a class="more" href="{{ '/news/' | relative_url }}">All news →</a></div>
-    {%- if site.posts.size > 0 %}
-    <ul class="news-list">
-      {%- for post in site.posts limit: 3 %}{% include news-item.html post=post %}{% endfor %}
-    </ul>
-    {%- else %}
-    <p class="empty">News from the project will appear here.</p>
-    {%- endif %}
-  </section>
-
   <div class="split">
     <section class="block" aria-labelledby="h-next">
-      <div class="block-head"><h2 id="h-next">Upcoming events</h2><a class="more" href="{{ '/events/' | relative_url }}">Timeline →</a></div>
-      {%- assign events = site.data.events | sort: "date" %}
-      <ul class="events" data-upcoming-only="2">
-        {%- for item in events %}{% include event.html e=item %}{% endfor %}
+      <div class="block-head"><h2 id="h-next">Coming up</h2><a class="more" href="{{ '/dissemination/' | relative_url }}">Dissemination →</a></div>
+      {%- assign items = site.data.dissemination | sort: "date" %}
+      <ul class="events" data-upcoming-only="3">
+        {%- for e in items %}
+        <li class="event" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
+          <time class="date" datetime="{{ e.date | date: '%Y-%m-%d' }}"><span class="d">{{ e.date | date: "%-d" }}</span><span class="m">{{ e.date | date: "%b" }}</span><span class="y">{{ e.date | date: "%Y" }}</span></time>
+          <div class="event-body">
+            <span class="label">{{ e.type }}{% if e.organised %} · Organised by WorKnow{% endif %}</span>
+            <h3>{{ e.title }}</h3>
+            <span class="meta">{{ e.place }}</span>
+          </div>
+        </li>
+        {%- endfor %}
       </ul>
-      <p class="empty" data-empty{% if events.size > 0 %} hidden{% endif %}>No upcoming events at the moment. Check back soon.</p>
+      <p class="empty" data-empty{% if items.size > 0 %} hidden{% endif %}>Nothing scheduled at the moment. Check back soon.</p>
     </section>
     <section class="block" aria-labelledby="h-latest">
       <div class="block-head"><h2 id="h-latest">Latest publications</h2><a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a></div>

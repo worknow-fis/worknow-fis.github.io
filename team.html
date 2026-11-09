@@ -4,30 +4,18 @@ title: Team
 permalink: /team/
 description: The WorKnow research team at the Sant’Anna School of Advanced Studies, Pisa.
 ---
-{%- assign pi = site.data.team | where: "pi", true -%}
-{%- assign members = site.data.team | where_exp: "m", "m.pi != true" -%}
 <div class="page">
   <header class="page-head">
     <p class="label">People</p>
-    <h1>Team</h1>
-    <p>WorKnow is based at the Sant’Anna School of Advanced Studies in Pisa.</p>
+    <h1>The team</h1>
+    <p>We are historians of science and economic historians following the people who made knowledge work: the artisans, merchants, reckoners and other practitioners of late medieval and early modern Europe. The team is based at the Sant’Anna School of Advanced Studies in Pisa.</p>
   </header>
 
-  {%- for item in pi %}
-  <section class="block" aria-labelledby="h-pi">
-    <div class="block-head"><h2 id="h-pi">Principal Investigator</h2></div>
-    {% include person.html p=item featured=true %}
-  </section>
-  {%- endfor %}
-
-  {%- if members.size > 0 %}
-  <section class="block" aria-labelledby="h-team">
-    <div class="block-head"><h2 id="h-team">Postdoctoral researchers</h2></div>
+  <section class="block" aria-label="Team members">
     <div class="people">
-      {%- for item in members %}{% include person.html p=item %}{% endfor %}
+      {%- for item in site.data.team %}{% include person.html p=item %}{% endfor %}
     </div>
   </section>
-  {%- endif %}
 
   {%- if site.data.collaborators.size > 0 %}
   <section class="block" aria-labelledby="h-collab">

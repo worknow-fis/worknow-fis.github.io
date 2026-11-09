@@ -87,11 +87,11 @@ There are two ways to edit, and you can mix them freely.
 
 ### A. Web forms with Pages CMS (easiest)
 
-[Pages CMS](https://pagescms.org) is a free editor that presents the site’s content as forms: a list of team members, a calendar for event dates, a text editor for news. Saving a form saves the file on GitHub, and the site republishes itself.
+[Pages CMS](https://pagescms.org) is a free editor that presents the site’s content as forms: a list of team members, a calendar for event dates, a text editor for the project description. Saving a form saves the file on GitHub, and the site republishes itself.
 
 1. Open **app.pagescms.org** and sign in with GitHub.
 2. When asked, install the Pages CMS app on the **worknow-fis** organisation and give it access to the `worknow-fis.github.io` repository.
-3. Open the repository. The left menu shows News, Events, Team, Collaborators, Publications, Talks and seminars, Public engagement, and Project description.
+3. Open the repository. The left menu shows Dissemination, Team, Collaborators, Publications and Project description.
 
 The forms are defined in `.pages.yml`. Pages CMS is an independent open-source service, not part of GitHub. If it ever disappears, method B always works.
 
@@ -101,32 +101,17 @@ Open a file on github.com, click the pencil icon, make the change and click **Co
 
 | To change… | Edit |
 |---|---|
-| **News** | Add a file to `_posts` named `YYYY-MM-DD-short-title.md` (see below) |
-| **Events** | `_data/events.yml`: the timeline sorts them and marks upcoming ones by itself |
-| **Team** | `_data/team.yml` |
+| **Dissemination** (workshops, events, presentations) | `_data/dissemination.yml`: the timeline sorts them and marks upcoming ones by itself |
+| **Team** | `_data/team.yml` (name, role, specialisation, photo, email, personal page) |
 | **Collaborators / advisory board** | `_data/collaborators.yml`: the section appears once it has an entry |
 | **Publications** | `_data/publications.yml` |
-| **Talks and outreach** | `_data/talks.yml`, `_data/outreach.yml` |
 | **Project text** | `project.md` (Markdown) |
 | **Home page text** | `index.html` |
 | **Contact email, project dates, grant facts** | `_config.yml` |
 | **Menu** | `_data/navigation.yml` |
 | **Colours, fonts, spacing** | `assets/css/main.css` (tokens at the top) |
 
-**Adding a news item.** In `_posts`, click **Add file → Create new file**, name it for example `2026-12-01-call-for-papers.md`, and write:
-
-```markdown
----
-title: "Call for papers: practitioners and practical knowledge"
----
-The first paragraph becomes the summary shown on the home page and in the news list.
-
-Further paragraphs appear on the news item’s own page. *Italics* and [links](https://example.org) work as usual.
-```
-
-To link to another page of this site inside a news item, write the link as `[Team page]({{ '/team/' | relative_url }})`. It then keeps working if the site moves to a sub-folder.
-
-**Adding a team photo.** Upload a portrait (4:5 proportion, about 640×800 pixels, JPG) to `assets/img/team/`. Then set that person’s `photo:` to `/assets/img/team/file-name.jpg`. Pages CMS does both steps from the form.
+**Adding a team photo.** Upload a portrait (JPG; square or 4:5 works best) to `assets/img/team/`. Then set that person’s `photo:` to `/assets/img/team/file-name.jpg`. Pages CMS does both steps from the form.
 
 ### Avoiding mistakes in `.yml` files
 
@@ -153,14 +138,12 @@ and open http://localhost:4000.
 
 ```
 _config.yml             site settings and project facts
-_data/                  content lists: team, events, publications, talks, outreach, menu
-_posts/                 news items, one Markdown file each
-_includes/              building blocks: header, footer, member card, timeline…
-_layouts/               page frames: default, news item, project page
+_data/                  content lists: team, dissemination, publications, collaborators, menu
+_includes/              building blocks: header, footer, member card, timeline, logo…
+_layouts/               page frames: default, project page
 index.html              Home
 project.md              Project description (Markdown)
-team.html, news.html, publications.html, events.html, dissemination.html, funding.html
-feed.xml                news feed for feed readers
+team.html, publications.html, dissemination.html, funding.html
 assets/css, js, fonts, img
 .github/workflows/      automatic publishing, and packaging for another server
 .pages.yml              Pages CMS form definitions

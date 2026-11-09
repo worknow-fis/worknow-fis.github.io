@@ -1,0 +1,25 @@
+# Dissemination: workshops and events organised by WorKnow, and presentations
+# where the team presents the project's work. One list for everything.
+# Order doesn't matter: the page sorts by date and marks upcoming items automatically.
+#
+#   date:       YYYY-MM-DD
+#   end_date:   optional, for items lasting more than one day
+#   type:       Workshop, Conference, Seminar, Conference paper, Invited talk, Public lecture…
+#   organised:  true if WorKnow organised it (shows "Organised by WorKnow")
+#   title:      Title of the event or of the paper presented
+#   place:      Venue or conference, city
+#   text:       optional short description, e.g. "Presented by Name Surname."
+#   link:       optional link to the programme, call for papers or slides
+#
+# To add the first item, delete the [] line and copy this pattern:
+#
+# - date: 2026-11-19
+#   end_date: 2026-11-20
+#   type: Workshop
+#   organised: true
+#   title: Practitioners and practical knowledge, 1300–1800
+#   place: Sant’Anna School of Advanced Studies, Pisa
+#   text: Two-day workshop bringing together historians of science and economic historians.
+#   link: https://example.org/programme.pdf
+
+[]

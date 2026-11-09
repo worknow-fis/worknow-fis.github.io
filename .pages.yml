@@ -9,31 +9,10 @@ media:
   categories: [image]
 
 content:
-  - name: news
-    label: News
-    type: collection
-    path: _posts
-    format: yaml-frontmatter
-    filename:
-      template: "{year}-{month}-{day}-{primary}.md"
-      field: create
-    view:
-      primary: title
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: body
-        label: Text
-        type: rich-text
-        options:
-          format: markdown
-
-  - name: events
-    label: Events
+  - name: dissemination
+    label: Dissemination
     type: file
-    path: _data/events.yml
+    path: _data/dissemination.yml
     format: yaml
     list: true
     fields:
@@ -49,20 +28,23 @@ content:
         options:
           format: yyyy-MM-dd
       - name: type
-        label: Type (Workshop, Seminar, Conference…)
+        label: Type (Workshop, Conference, Seminar, Conference paper, Invited talk…)
         type: string
+      - name: organised
+        label: Organised by WorKnow
+        type: boolean
       - name: title
         label: Title
         type: string
         required: true
       - name: place
-        label: Place
+        label: Venue or conference, city
         type: string
       - name: text
-        label: Short description
+        label: Short description (e.g. Presented by…)
         type: text
       - name: link
-        label: Link to programme or call for papers
+        label: Link to programme, call for papers or slides
         type: string
 
   - name: team
@@ -77,19 +59,19 @@ content:
         type: string
         required: true
       - name: role
-        label: Role
+        label: Role (Principal Investigator or Researcher)
         type: string
-      - name: pi
-        label: Principal Investigator
-        type: boolean
+      - name: specialisation
+        label: Specialisation (short line)
+        type: string
       - name: photo
-        label: Portrait (4:5, about 640×800 px)
+        label: Portrait (square or 4:5)
         type: image
-      - name: bio
-        label: Short biography
-        type: text
+      - name: email
+        label: Email
+        type: string
       - name: link
-        label: Personal or institutional page
+        label: Personal or institutional page (shown as people/Name-Surname)
         type: string
 
   - name: collaborators
@@ -148,66 +130,6 @@ content:
       - name: oa
         label: Open access
         type: boolean
-
-  - name: talks
-    label: Talks and seminars
-    type: file
-    path: _data/talks.yml
-    format: yaml
-    list: true
-    fields:
-      - name: date
-        label: Date
-        type: date
-        required: true
-        options:
-          format: yyyy-MM-dd
-      - name: type
-        label: Type (Conference paper, Invited seminar…)
-        type: string
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: place
-        label: Conference or venue, city
-        type: string
-      - name: text
-        label: Note (e.g. Presented by…)
-        type: text
-      - name: link
-        label: Link
-        type: string
-
-  - name: outreach
-    label: Public engagement
-    type: file
-    path: _data/outreach.yml
-    format: yaml
-    list: true
-    fields:
-      - name: date
-        label: Date
-        type: date
-        required: true
-        options:
-          format: yyyy-MM-dd
-      - name: type
-        label: Type (Public lecture, Interview, Article…)
-        type: string
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: place
-        label: Venue or outlet
-        type: string
-      - name: text
-        label: Short description
-        type: text
-      - name: link
-        label: Link
-        type: string
 
   - name: project
     label: Project description
