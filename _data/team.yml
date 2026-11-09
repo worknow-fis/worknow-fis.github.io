@@ -20,34 +20,34 @@
 - name: Alessandro Brioschi
   role: Researcher
   specialisation: Specialisation to be added
-  photo: ""
+  photo: /assets/img/team/alessandro-brioschi.jpg
   email: ""
   link: ""
 
 - name: Giuliana Freschi
   role: Researcher
   specialisation: Specialisation to be added
-  photo: ""
+  photo: /assets/img/team/giuliana-freschi.jpg
   email: ""
   link: ""
 
 - name: Francesca Masiero
   role: Researcher
   specialisation: Specialisation to be added
-  photo: ""
+  photo: /assets/img/team/francesca-masiero.jpg
   email: ""
   link: ""
 
 - name: Andrea Papi
   role: Researcher
   specialisation: Specialisation to be added
-  photo: ""
+  photo: /assets/img/team/andrea-papi.jpg
   email: ""
   link: ""
 
 - name: Jip Van Besouw
   role: Researcher
   specialisation: Specialisation to be added
-  photo: ""
+  photo: /assets/img/team/jip-van-besouw.jpg
   email: ""
   link: ""
