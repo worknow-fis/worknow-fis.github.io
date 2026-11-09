@@ -3,7 +3,7 @@
 #
 #   name:            Full name
 #   role:            Principal Investigator or Researcher
-#   specialisation:  Research areas, separated by commas
+#   specialisation:  Research areas, separated by semicolons
 #   photo:           Path of a portrait uploaded to assets/img/team/ (any size; square or 4:5 works best),
 #                    e.g. /assets/img/team/name-surname.jpg. Leave "" to show initials instead.
 #   email:           Shown on its own line with an envelope icon. Leave "" until known ("Email to be added" is shown).
@@ -12,24 +12,24 @@
 
 - name: Raffaele Danna
   role: Principal Investigator
-  specialisation: Economic History, History of Science, History of Mathematics
+  specialisation: Economic History; History of Science; History of Mathematics
   photo: /assets/img/team/raffaele-danna.jpg
   email: r.danna@santannapisa.it
   link: https://rafdanna.com/
 
 - name: Alessandro Brioschi
   role: Researcher
-  specialisation: Specialisation to be added
+  specialisation: Economic History; Apprenticeship; Human Capital acquisition; Real Wages; pre-industrial labour markets
   photo: /assets/img/team/alessandro-brioschi.jpg
-  email: ""
-  link: ""
+  email: alessandro.brioschi@santannapisa.it
+  link: https://alessandrobrioschi.github.io/
 
 - name: Giuliana Freschi
   role: Researcher
-  specialisation: Specialisation to be added
+  specialisation: Economic History; Gender; Wages; Care work; Social mobility
   photo: /assets/img/team/giuliana-freschi.jpg
-  email: ""
-  link: ""
+  email: giuliana.freschi@santannapisa.it
+  link: https://sites.google.com/view/giulianafreschi
 
 - name: Francesca Masiero
   role: Researcher
