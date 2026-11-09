@@ -1,0 +1,40 @@
+---
+layout: default
+title: Team
+permalink: /team/
+description: The WorKnow research team at the Sant’Anna School of Advanced Studies, Pisa.
+---
+{%- assign pi = site.data.team | where: "pi", true -%}
+{%- assign members = site.data.team | where_exp: "m", "m.pi != true" -%}
+<div class="page">
+  <header class="page-head">
+    <p class="label">People</p>
+    <h1>Team</h1>
+    <p>WorKnow is based at the Sant’Anna School of Advanced Studies in Pisa.</p>
+  </header>
+
+  {%- for item in pi %}
+  <section class="block" aria-labelledby="h-pi">
+    <div class="block-head"><h2 id="h-pi">Principal Investigator</h2></div>
+    {% include person.html p=item featured=true %}
+  </section>
+  {%- endfor %}
+
+  {%- if members.size > 0 %}
+  <section class="block" aria-labelledby="h-team">
+    <div class="block-head"><h2 id="h-team">Postdoctoral researchers</h2></div>
+    <div class="people">
+      {%- for item in members %}{% include person.html p=item %}{% endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
+  {%- if site.data.collaborators.size > 0 %}
+  <section class="block" aria-labelledby="h-collab">
+    <div class="block-head"><h2 id="h-collab">Collaborators and advisory board</h2></div>
+    <div class="people">
+      {%- for item in site.data.collaborators %}{% include person.html p=item %}{% endfor %}
+    </div>
+  </section>
+  {%- endif %}
+</div>

@@ -1,0 +1,18 @@
+<svg class="quadrant" viewBox="0 0 400 400" role="img" aria-labelledby="q-title">
+  <title id="q-title">A quadrant with two graduated arcs, labelled history of science and economic history, read by a single plumb line labelled practitioners.</title>
+  <g fill="none" stroke="var(--ink)" stroke-width="1.5">
+    <path d="M30 30 H370 A340 340 0 0 1 30 370 Z" stroke-width="2"/>
+    <path d="M30 30 H300 A270 270 0 0 1 30 300" stroke="var(--rule)"/>
+    <path d="M30 30 H240 A210 210 0 0 1 30 240" stroke="var(--rule)"/>
+  </g>
+  <g stroke="var(--ink)" stroke-width="1"><line x1="370.0" y1="30.0" x2="356.0" y2="30.0"/><line x1="368.7" y1="59.6" x2="361.7" y2="59.0"/><line x1="364.8" y1="89.0" x2="357.9" y2="87.8"/><line x1="358.4" y1="118.0" x2="344.9" y2="114.4"/><line x1="349.5" y1="146.3" x2="342.9" y2="143.9"/><line x1="338.1" y1="173.7" x2="331.8" y2="170.7"/><line x1="324.4" y1="200.0" x2="312.3" y2="193.0"/><line x1="308.5" y1="225.0" x2="302.8" y2="221.0"/><line x1="290.5" y1="248.5" x2="285.1" y2="244.0"/><line x1="270.4" y1="270.4" x2="260.5" y2="260.5"/><line x1="248.5" y1="290.5" x2="244.0" y2="285.1"/><line x1="225.0" y1="308.5" x2="221.0" y2="302.8"/><line x1="200.0" y1="324.4" x2="193.0" y2="312.3"/><line x1="173.7" y1="338.1" x2="170.7" y2="331.8"/><line x1="146.3" y1="349.5" x2="143.9" y2="342.9"/><line x1="118.0" y1="358.4" x2="114.4" y2="344.9"/><line x1="89.0" y1="364.8" x2="87.8" y2="357.9"/><line x1="59.6" y1="368.7" x2="59.0" y2="361.7"/><line x1="30.0" y1="370.0" x2="30.0" y2="356.0"/></g>
+  <g fill="var(--muted)" font-size="11" text-anchor="middle"><text x="331.4" y="114.8">15</text><text x="300.2" y="190.0">30</text><text x="250.6" y="254.6">45</text><text x="186.0" y="304.2">60</text><text x="110.8" y="335.4">75</text></g>
+  <path id="arcA" d="M312 30 A282 282 0 0 1 30 312" fill="none"/>
+  <path id="arcB" d="M252 30 A222 222 0 0 1 30 252" fill="none"/>
+  <text font-size="12" letter-spacing="1.5" fill="var(--ink)"><textPath href="#arcA" startOffset="3%">HISTORY OF SCIENCE</textPath></text>
+  <text font-size="12" letter-spacing="1.5" fill="var(--ink)"><textPath href="#arcB" startOffset="2%">ECONOMIC HISTORY</textPath></text>
+  <line x1="30" y1="30" x2="246" y2="283" stroke="var(--accent)" stroke-width="1.5"/>
+  <circle cx="30" cy="30" r="4" fill="var(--ink)"/>
+  <path d="M246 283 l-7 -14 a8 8 0 1 1 14 0 Z" fill="var(--accent)" transform="rotate(-40.5 246 283)"/>
+  <text x="69" y="63" font-size="12" letter-spacing="1.5" fill="var(--accent)" transform="rotate(49.5 69 63)">PRACTITIONERS</text>
+</svg>

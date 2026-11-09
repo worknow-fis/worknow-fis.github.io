@@ -1,0 +1,240 @@
+# Pages CMS configuration (optional).
+# Lets the team edit content through web forms at https://app.pagescms.org
+# instead of editing files by hand. Each save is an ordinary GitHub commit,
+# so the site rebuilds exactly as if the file had been edited on GitHub.
+
+media:
+  input: assets/img
+  output: /assets/img
+  categories: [image]
+
+content:
+  - name: news
+    label: News
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: events
+    label: Events
+    type: file
+    path: _data/events.yml
+    format: yaml
+    list: true
+    fields:
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: end_date
+        label: End date (multi-day events only)
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: type
+        label: Type (Workshop, Seminar, Conference…)
+        type: string
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: place
+        label: Place
+        type: string
+      - name: text
+        label: Short description
+        type: text
+      - name: link
+        label: Link to programme or call for papers
+        type: string
+
+  - name: team
+    label: Team
+    type: file
+    path: _data/team.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+      - name: pi
+        label: Principal Investigator
+        type: boolean
+      - name: photo
+        label: Portrait (4:5, about 640×800 px)
+        type: image
+      - name: bio
+        label: Short biography
+        type: text
+      - name: link
+        label: Personal or institutional page
+        type: string
+
+  - name: collaborators
+    label: Collaborators
+    type: file
+    path: _data/collaborators.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Role (e.g. Advisory board)
+        type: string
+      - name: affiliation
+        label: Institution
+        type: string
+      - name: photo
+        label: Portrait
+        type: image
+      - name: link
+        label: Web page
+        type: string
+
+  - name: publications
+    label: Publications
+    type: file
+    path: _data/publications.yml
+    format: yaml
+    list: true
+    fields:
+      - name: type
+        label: Type (Article, Working paper, Book chapter, Book, Dataset…)
+        type: string
+        required: true
+      - name: year
+        label: Year
+        type: number
+        required: true
+      - name: authors
+        label: Authors (Surname, Name, and Name Surname)
+        type: string
+        required: true
+      - name: title
+        label: Title (no final full stop)
+        type: string
+        required: true
+      - name: in
+        label: Where it appeared (use *asterisks* for italics)
+        type: string
+      - name: url
+        label: Link (DOI or open-access copy)
+        type: string
+      - name: oa
+        label: Open access
+        type: boolean
+
+  - name: talks
+    label: Talks and seminars
+    type: file
+    path: _data/talks.yml
+    format: yaml
+    list: true
+    fields:
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: type
+        label: Type (Conference paper, Invited seminar…)
+        type: string
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: place
+        label: Conference or venue, city
+        type: string
+      - name: text
+        label: Note (e.g. Presented by…)
+        type: text
+      - name: link
+        label: Link
+        type: string
+
+  - name: outreach
+    label: Public engagement
+    type: file
+    path: _data/outreach.yml
+    format: yaml
+    list: true
+    fields:
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: type
+        label: Type (Public lecture, Interview, Article…)
+        type: string
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: place
+        label: Venue or outlet
+        type: string
+      - name: text
+        label: Short description
+        type: text
+      - name: link
+        label: Link
+        type: string
+
+  - name: project
+    label: Project description
+    type: file
+    path: project.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+      - name: title
+        type: string
+        hidden: true
+      - name: heading
+        label: Heading
+        type: string
+      - name: subtitle
+        label: Subtitle
+        type: string
+      - name: permalink
+        type: string
+        hidden: true
+      - name: description
+        label: Summary for search engines
+        type: text
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown

@@ -1,0 +1,31 @@
+---
+layout: default
+title: News
+permalink: /news/
+description: News from the WorKnow project.
+---
+<div class="page">
+  <header class="page-head">
+    <p class="label">News</p>
+    <h1>News</h1>
+    <p>Announcements, calls for papers and updates from the project. <a href="{{ '/feed.xml' | relative_url }}">Subscribe to the feed</a>.</p>
+  </header>
+  <section class="block" aria-label="All news">
+    {%- if site.posts.size > 0 %}
+    {%- assign current_year = "" %}
+    {%- for post in site.posts %}
+      {%- assign y = post.date | date: "%Y" %}
+      {%- if y != current_year %}
+        {%- unless forloop.first %}</ul>{% endunless %}
+    <h2 class="year-head">{{ y }}</h2>
+    <ul class="news-list">
+        {%- assign current_year = y %}
+      {%- endif %}
+      {% include news-item.html post=post %}
+    {%- endfor %}
+    </ul>
+    {%- else %}
+    <p class="empty">News from the project will appear here.</p>
+    {%- endif %}
+  </section>
+</div>

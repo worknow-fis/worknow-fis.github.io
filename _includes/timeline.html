@@ -1,0 +1,40 @@
+{%- comment -%}
+  Event timeline. Events from _data/events.yml in date order, framed by the
+  project's start and end. main.js marks upcoming events and inserts a "Today" marker.
+{%- endcomment -%}
+{%- assign events = site.data.events | sort: "date" -%}
+<ol class="timeline" id="timeline">
+  <li class="tl-item tl-bookend" data-date="0000-00-00">
+    <span class="tl-dot" aria-hidden="true"></span>
+    <div class="tl-when">{{ site.project.start }}</div>
+    <div class="tl-body"><h3>WorKnow begins</h3><p class="meta">{{ site.project.host }}</p></div>
+  </li>
+  {%- assign current_year = "" -%}
+  {%- for e in events -%}
+    {%- assign y = e.date | date: "%Y" -%}
+    {%- if y != current_year %}
+  <li class="tl-year"><span>{{ y }}</span></li>
+      {%- assign current_year = y -%}
+    {%- endif %}
+  <li class="tl-item" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
+    <span class="tl-dot" aria-hidden="true"></span>
+    <time class="tl-when" datetime="{{ e.date | date: '%Y-%m-%d' }}">
+      {%- assign m1 = e.date | date: "%m" -%}{%- assign m2 = e.end_date | date: "%m" -%}
+      {%- if e.end_date and m1 != m2 -%}{{ e.date | date: "%-d %B" }} – {{ e.end_date | date: "%-d %B" }}
+      {%- elsif e.end_date -%}{{ e.date | date: "%-d" }}–{{ e.end_date | date: "%-d %B" }}
+      {%- else -%}{{ e.date | date: "%-d %B" }}{%- endif -%}
+    </time>
+    <div class="tl-body">
+      {%- if e.type %}<span class="label">{{ e.type }}<span class="tl-badge" hidden> · Upcoming</span></span>{% endif %}
+      <h3>{{ e.title }}</h3>
+      <p class="meta">{{ e.place }}{% if e.link %} · <a href="{{ e.link }}" target="_blank" rel="noopener">Programme and details</a>{% endif %}</p>
+      {%- if e.text %}<p>{{ e.text }}</p>{% endif %}
+    </div>
+  </li>
+  {%- endfor %}
+  <li class="tl-item tl-bookend" data-date="9999-12-31">
+    <span class="tl-dot" aria-hidden="true"></span>
+    <div class="tl-when">{{ site.project.end }}</div>
+    <div class="tl-body"><h3>WorKnow concludes</h3><p class="meta">End of the three-year grant</p></div>
+  </li>
+</ol>

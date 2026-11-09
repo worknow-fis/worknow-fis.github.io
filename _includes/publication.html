@@ -1,0 +1,14 @@
+{%- comment -%} Publication entry, Chicago author–date style. Usage: {% include publication.html p=item %} {%- endcomment -%}
+{%- assign p = include.p %}
+<li class="pub" data-type="{{ p.type }}">
+  <span class="yr">{{ p.year }}</span>
+  <div class="cite">
+    <span class="cite-text">{{ p.authors }}. {{ p.year }}. {% if p.type == "Book" %}<em>{{ p.title }}</em>.{% else %}“{{ p.title }}.”{% endif %} {% if p.in %}{{ p.in | markdownify | remove: "<p>" | remove: "</p>" | strip }}.{% endif %}</span>
+    <div class="tools">
+      <span class="chip">{{ p.type }}</span>
+      {%- if p.oa %}<span class="chip oa">Open access</span>{% endif %}
+      {%- if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">Read</a>{% endif %}
+      <button class="linkbtn" type="button" data-copy-cite>Copy citation</button>
+    </div>
+  </div>
+</li>

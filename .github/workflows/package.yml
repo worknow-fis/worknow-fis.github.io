@@ -1,0 +1,55 @@
+# Builds a ready-to-upload copy of the website for another web server
+# (for example a Sant'Anna server). Run it by hand:
+#   Actions tab → "Package site for another server" → Run workflow
+# then download the zip from the finished run. See MIGRATION.md.
+
+name: Package site for another server
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_url:
+        description: "Web address the site will live at, without a trailing slash (e.g. https://www.santannapisa.it)"
+        required: true
+        default: "https://worknow.eu"
+      base_path:
+        description: "Sub-folder, starting with / (e.g. /worknow). Leave empty if the site is at the root of the address."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the files
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Install Jekyll
+        run: bundle install
+
+      # The address typed in the form overrides the one in _config.yml.
+      - name: Build the site for the new address
+        shell: bash
+        env:
+          JEKYLL_ENV: production
+          SITE_URL: ${{ inputs.site_url }}
+          BASE_PATH: ${{ inputs.base_path }}
+        run: |
+          printf 'url: "%s"\nbaseurl: "%s"\n' "$SITE_URL" "$BASE_PATH" > _server.yml
+          cat _server.yml
+          bundle exec jekyll build --config _config.yml,_server.yml
+
+      - name: Offer the built site as a download
+        uses: actions/upload-artifact@v4
+        with:
+          name: worknow-website
+          path: _site
+          retention-days: 30

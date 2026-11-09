@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="frame">
+    <div class="funders">
+      <div class="plate"><img src="{{ '/assets/img/logos/mur.png' | relative_url }}" alt="Ministero dell’Università e della Ricerca" width="269" height="90"></div>
+      <div class="plate"><img src="{{ '/assets/img/logos/fis.png' | relative_url }}" alt="Fondo Italiano per la Scienza" width="199" height="112"></div>
+      <div class="plate"><img src="{{ '/assets/img/logos/santanna.png' | relative_url }}" alt="Sant’Anna School of Advanced Studies" width="136" height="139"></div>
+      <div class="plate"><img src="{{ '/assets/img/logos/worknow.png' | relative_url }}" alt="WorKnow" width="121" height="136"></div>
+    </div>
+    <p class="ackline">WorKnow is funded by the Fondo Italiano per la Scienza (FIS) of the Italian Ministry of University and Research, Starting Grant {{ site.project.grant }}, and hosted by the {{ site.project.host }}.</p>
+    <div class="foot-row">
+      <span>Project period: {{ site.project.start }} – {{ site.project.end }}{% if site.email != "" %} · Contact: {{ site.email }}{% endif %}</span>
+      <span>© {{ site.time | date: "%Y" }} WorKnow · This site uses no cookies or tracking.</span>
+    </div>
+  </div>
+</footer>

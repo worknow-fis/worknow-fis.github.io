@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- assign p = site.project -%}
+<div class="page">
+  <header class="page-head">
+    <p class="label">The project</p>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+  </header>
+  <div class="with-aside">
+    <article class="prose">
+      {{ content }}
+    </article>
+    <aside class="aside" aria-label="Project facts">
+      <dl>
+        <div><dt>Acronym</dt><dd>WorKnow</dd></div>
+        <div><dt>Principal Investigator</dt><dd>{{ p.pi }}</dd></div>
+        <div><dt>Host</dt><dd>{{ p.host }}</dd></div>
+        <div><dt>Programme</dt><dd>{{ p.programme }}</dd></div>
+        <div><dt>Grant code</dt><dd>{{ p.grant }}</dd></div>
+        <div><dt>Duration</dt><dd>{{ p.start }} – {{ p.end }}</dd></div>
+        <div><dt>Fields</dt><dd>History of science · Economic history</dd></div>
+      </dl>
+    </aside>
+  </div>
+</div>

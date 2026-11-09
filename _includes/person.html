@@ -1,0 +1,26 @@
+{%- comment -%}
+  Member card. Usage: {% include person.html p=item %}  or  featured=true for the PI.
+  "photo" may be a bare file name (looked up in assets/img/team/) or a full path such as /assets/img/team/x.jpg.
+{%- endcomment -%}
+{%- assign p = include.p -%}
+{%- assign words = p.name | split: " " -%}
+{%- if p.photo and p.photo != "" -%}
+  {%- if p.photo contains "/" -%}{%- assign photo_src = p.photo | relative_url -%}
+  {%- else -%}{%- assign photo_src = "/assets/img/team/" | append: p.photo | relative_url -%}{%- endif -%}
+{%- else -%}{%- assign photo_src = nil -%}{%- endif %}
+<article class="person{% if include.featured %} featured{% endif %}">
+  <div class="portrait">
+    {%- if photo_src %}
+    <img src="{{ photo_src }}" alt="Portrait of {{ p.name }}" loading="lazy" width="640" height="800">
+    {%- else %}
+    <span class="initials" aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</span>
+    {%- endif %}
+  </div>
+  <div class="who">
+    <h3>{% if p.link and p.link != "" %}<a href="{{ p.link }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+    <span class="role">{{ p.role }}{% if p.affiliation %} · {{ p.affiliation }}{% endif %}</span>
+    {%- if p.bio and p.bio != "" %}
+    <p>{{ p.bio }}</p>
+    {%- endif %}
+  </div>
+</article>

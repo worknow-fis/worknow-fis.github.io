@@ -1,0 +1,55 @@
+---
+layout: default
+title: Funding
+permalink: /funding/
+description: WorKnow is funded by the Italian Ministry of University and Research through the Fondo Italiano per la Scienza and hosted by the Sant’Anna School of Advanced Studies, Pisa.
+---
+{%- assign p = site.project -%}
+<div class="page">
+  <header class="page-head">
+    <p class="label">Funding</p>
+    <h1>Funders and host institution</h1>
+    <p>WorKnow is funded by the Italian Ministry of University and Research through the Fondo Italiano per la Scienza.</p>
+  </header>
+
+  <section class="block" aria-label="Logos">
+    <div class="logo-grid">
+      <figure class="logo-card">
+        <div class="plate"><img src="{{ '/assets/img/logos/worknow.png' | relative_url }}" alt="WorKnow project logo" width="121" height="136"></div>
+        <figcaption><span class="label">Project</span><br>WorKnow – Working Knowledge</figcaption>
+      </figure>
+      <figure class="logo-card">
+        <div class="plate"><img src="{{ '/assets/img/logos/mur.png' | relative_url }}" alt="Ministero dell’Università e della Ricerca logo" width="269" height="90"></div>
+        <figcaption><span class="label">Funder</span><br>Ministero dell’Università e della Ricerca</figcaption>
+      </figure>
+      <figure class="logo-card">
+        <div class="plate"><img src="{{ '/assets/img/logos/fis.png' | relative_url }}" alt="Fondo Italiano per la Scienza logo" width="199" height="112"></div>
+        <figcaption><span class="label">Programme</span><br>Fondo Italiano per la Scienza</figcaption>
+      </figure>
+      <figure class="logo-card">
+        <div class="plate"><img src="{{ '/assets/img/logos/santanna.png' | relative_url }}" alt="Sant’Anna School of Advanced Studies logo" width="136" height="139"></div>
+        <figcaption><span class="label">Host institution</span><br>Sant’Anna School of Advanced Studies, Pisa</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-grant">
+    <div class="block-head"><h2 id="h-grant">Grant details</h2></div>
+    <dl class="dl-plain">
+      <dt>Programme</dt><dd>{{ p.programme }}</dd>
+      <dt>Grant code</dt><dd>{{ p.grant }}</dd>
+      <dt>Principal Investigator</dt><dd>{{ p.pi }}</dd>
+      <dt>Host institution</dt><dd>{{ p.host }}</dd>
+      <dt>Duration</dt><dd>{{ p.start }} – {{ p.end }}</dd>
+    </dl>
+  </section>
+
+  <section class="block" aria-labelledby="h-ack">
+    <div class="block-head"><h2 id="h-ack">How to acknowledge the grant</h2></div>
+    <div class="ack">
+      <p class="label">Wording for publications and slides</p>
+      <blockquote id="ack-text">This research was funded by the Italian Ministry of University and Research (MUR) through the Fondo Italiano per la Scienza (FIS), Starting Grant “WorKnow – Working Knowledge: The Emergence of Practitioners in Late Medieval and Early Modern Europe”, grant {{ p.grant }}.</blockquote>
+      <div><button class="btn ghost" id="copy-ack" type="button">Copy acknowledgement</button></div>
+    </div>
+  </section>
+</div>

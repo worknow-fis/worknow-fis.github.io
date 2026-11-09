@@ -1,0 +1,33 @@
+---
+layout: default
+title: Dissemination
+permalink: /dissemination/
+description: Conference papers, seminars and public engagement by members of the WorKnow team.
+---
+{%- assign talks = site.data.talks | sort: "date" | reverse -%}
+{%- assign outreach = site.data.outreach | sort: "date" | reverse -%}
+<div class="page">
+  <header class="page-head">
+    <p class="label">Dissemination</p>
+    <h1>Talks and outreach</h1>
+    <p>Papers presented by team members at conferences and seminars, and public engagement beyond academia.</p>
+  </header>
+
+  <section class="block" aria-labelledby="h-talks">
+    <div class="block-head"><h2 id="h-talks">Conference papers and seminars</h2></div>
+    {%- if talks.size > 0 %}
+    <ul class="events">{% for item in talks %}{% include event.html e=item %}{% endfor %}</ul>
+    {%- else %}
+    <p class="empty">Talks by the team will be listed here.</p>
+    {%- endif %}
+  </section>
+
+  <section class="block" aria-labelledby="h-outreach">
+    <div class="block-head"><h2 id="h-outreach">Public engagement</h2></div>
+    {%- if outreach.size > 0 %}
+    <ul class="events">{% for item in outreach %}{% include event.html e=item %}{% endfor %}</ul>
+    {%- else %}
+    <p class="empty">Public lectures, interviews and articles for general readers will be listed here.</p>
+    {%- endif %}
+  </section>
+</div>

@@ -1,0 +1,15 @@
+# Main menu, in order. "url" must match the page's address.
+- title: Project
+  url: /project/
+- title: Team
+  url: /team/
+- title: News
+  url: /news/
+- title: Publications
+  url: /publications/
+- title: Events
+  url: /events/
+- title: Dissemination
+  url: /dissemination/
+- title: Funding
+  url: /funding/

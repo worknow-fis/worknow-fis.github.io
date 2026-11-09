@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.url == "/" -%}
+    {%- assign doc_title = site.title | append: " · " | append: site.full_title -%}
+  {%- else -%}
+    {%- assign doc_title = page.title | append: " · " | append: site.title -%}
+  {%- endif -%}
+  {%- if page.excerpt and page.collection == "posts" -%}
+    {%- assign doc_desc = page.excerpt | strip_html | strip_newlines | truncate: 200 -%}
+  {%- else -%}
+    {%- assign doc_desc = page.description | default: site.description | strip_newlines -%}
+  {%- endif %}
+  <title>{{ doc_title }}</title>
+  <meta name="description" content="{{ doc_desc | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ doc_title | escape }}">
+  <meta property="og:description" content="{{ doc_desc | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/img/apple-touch-icon.png' | absolute_url }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="alternate" type="application/atom+xml" title="WorKnow news" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="preload" href="{{ '/assets/fonts/source-serif-4-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main" class="frame">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: Events
+permalink: /events/
+description: Workshops, seminars and conferences organised by the WorKnow project, on a timeline from 2025 to 2028.
+---
+<div class="page">
+  <header class="page-head">
+    <p class="label">Events</p>
+    <h1>Workshops, seminars and conferences</h1>
+    <p>Events organised or co-organised by WorKnow, from the start of the project to its conclusion. Programmes and calls for papers are posted here first.</p>
+  </header>
+  <section class="block" aria-label="Event timeline">
+    {% include timeline.html %}
+    {%- if site.data.events.size == 0 %}
+    <p class="empty">The project’s first events will be announced here.</p>
+    {%- endif %}
+  </section>
+</div>

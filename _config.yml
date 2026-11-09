@@ -1,0 +1,63 @@
+# ------------------------------------------------------------
+# WorKnow website: site settings
+# Most content lives in the _data and _posts folders, not here.
+# ------------------------------------------------------------
+
+title: WorKnow
+full_title: "Working Knowledge: The Emergence of Practitioners in Late Medieval and Early Modern Europe"
+description: >-
+  WorKnow reconsiders how the Scientific Revolution and the Industrial Revolution
+  emerged together, by reconstructing the rise of practitioners and practical
+  knowledge in Europe from the late Middle Ages onwards.
+lang: en-GB
+
+# ---- Web address -------------------------------------------
+# url:     the address of the site, without a trailing slash
+# baseurl: "" when the site sits at the root of that address,
+#          or "/folder" when it sits in a sub-folder.
+#
+#   GitHub organisation site   url: "https://worknow-fis.github.io"   baseurl: ""
+#   Custom domain              url: "https://worknow.eu"           baseurl: ""
+#   Sant'Anna sub-folder       url: "https://www.santannapisa.it"  baseurl: "/worknow"
+#
+# On GitHub the sub-folder is detected automatically; this setting
+# matters when the site is built for another server (see MIGRATION.md).
+url: "https://worknow-fis.github.io"
+baseurl: ""
+
+# Project contact email. Leave empty ("") to hide it.
+email: ""
+
+# Facts shown on the Home, Project and Funding pages.
+project:
+  pi: Raffaele Danna
+  host: Sant’Anna School of Advanced Studies, Pisa
+  programme: Fondo Italiano per la Scienza (FIS), Starting Grant
+  grant: FIS 2023-01508
+  start: June 2025
+  end: June 2028
+
+# ---- Build settings (no need to change) --------------------
+markdown: kramdown
+kramdown:
+  smart_quotes: ["apos", "rsquo", "ldquo", "rdquo"]
+permalink: pretty
+timezone: Europe/Rome
+excerpt_separator: "\n\n"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /news/:year/:title/
+
+exclude:
+  - README.md
+  - MIGRATION.md
+  - DESIGN.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

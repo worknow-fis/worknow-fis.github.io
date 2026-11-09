@@ -1,0 +1,23 @@
+# Publications. They are sorted newest first automatically.
+#
+#   type:     Article, Working paper, Book chapter, Book, Dataset…
+#   year:     2026 (always a number; for forthcoming work use the expected year
+#             and write "Forthcoming" in the "in" field)
+#   authors:  Surname, Name, and Name Surname
+#   title:    Title without a final full stop
+#   in:       Where it appeared. Use *asterisks* for italics, e.g.
+#             "*Journal of Economic History* 86 (2): 1–30"
+#   url:      Link to the open-access version or the publisher (optional)
+#   oa:       true if open access
+#
+# To add the first publication, delete the [] line and copy this pattern:
+#
+# - type: Article
+#   year: 2026
+#   authors: Danna, Raffaele
+#   title: Title of the article
+#   in: "*Journal Name* 00 (0): 00–00"
+#   url: https://doi.org/10.xxxx/xxxxx
+#   oa: true
+
+[]

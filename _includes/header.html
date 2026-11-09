@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="frame">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="WorKnow home">
+      <img src="{{ '/assets/img/logos/worknow-ink.png' | relative_url }}" alt="" width="36" height="40">
+      <span>WorKnow</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <ul class="nav" id="nav">
+      {%- for item in site.data.navigation %}
+      {%- assign active = false -%}
+      {%- if page.url == item.url -%}{%- assign active = true -%}{%- endif -%}
+      {%- if item.url == "/news/" and page.collection == "posts" -%}{%- assign active = true -%}{%- endif %}
+      <li><a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,38 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+description: Articles, working papers and books produced by the WorKnow project.
+---
+{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign types = site.data.publications | map: "type" | uniq -%}
+<div class="page">
+  <header class="page-head">
+    <p class="label">Outputs</p>
+    <h1>Publications</h1>
+    <p>Articles, working papers and books from the project. Open-access versions are linked where available.</p>
+  </header>
+
+  <section class="block" aria-label="Publication list">
+    {%- if pubs.size > 0 %}
+      {%- if types.size > 1 %}
+      <div class="tabs" id="pub-filter" role="group" aria-label="Filter by type">
+        <button class="tab" type="button" data-type="All" aria-pressed="true">All<span class="n">{{ pubs.size }}</span></button>
+        {%- for t in types %}{% assign n = pubs | where: "type", t %}
+        <button class="tab" type="button" data-type="{{ t }}" aria-pressed="false">{{ t }}<span class="n">{{ n.size }}</span></button>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      <ul class="pubs" id="pub-list">
+        {%- for item in pubs %}{% include publication.html p=item %}{% endfor %}
+      </ul>
+    {%- else %}
+      <p class="empty">The first publications from the project will be listed here.</p>
+    {%- endif %}
+  </section>
+
+  <section class="block" aria-labelledby="h-data">
+    <div class="block-head"><h2 id="h-data">Data and resources</h2></div>
+    <div class="prose"><p>Datasets and research tools produced by WorKnow will be released here under open licences, with documentation and a recommended citation.</p></div>
+  </section>
+</div>
