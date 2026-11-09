@@ -24,18 +24,22 @@
     <p class="spec">{{ p.specialisation }}</p>
     {%- endif %}
     {%- assign has_email = false -%}{%- if p.email and p.email != "" -%}{%- assign has_email = true -%}{%- endif -%}
-    {%- assign has_link = false -%}{%- if p.link and p.link != "" -%}{%- assign has_link = true -%}{%- endif -%}
-    {%- if has_email or has_link %}
+    {%- assign has_link = false -%}{%- if p.link and p.link != "" -%}{%- assign has_link = true -%}{%- endif %}
     <div class="contact">
       {%- if has_email %}
       <a class="mail" href="mailto:{{ p.email }}" title="{{ p.email }}" aria-label="Email {{ p.name }} ({{ p.email }})">
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 6.6 12 13l8.2-6.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
       </a>
+      {%- else %}
+      <span class="mail is-empty" title="Email address to be added" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.8 6.6 12 13l8.2-6.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
       {%- endif %}
       {%- if has_link %}
       <a class="people-link" href="{{ p.link }}" target="_blank" rel="noopener">people/{{ slug }}</a>
+      {%- else %}
+      <span class="people-link is-empty">people/{{ slug }}</span>
       {%- endif %}
     </div>
-    {%- endif %}
   </div>
 </article>

@@ -1,51 +1,52 @@
-# Team members, in the order they appear on the Team page (PI first).
+# Team members, in the order they appear on the Team page (three per row).
 #
 #   name:            Full name
 #   role:            Principal Investigator or Researcher
-#   specialisation:  A short line of research interests, e.g. "Economic history · History of mathematics"
+#   specialisation:  Research areas, separated by commas
 #   photo:           Path of a portrait uploaded to assets/img/team/ (any size; square or 4:5 works best),
 #                    e.g. /assets/img/team/name-surname.jpg. Leave "" to show initials instead.
-#   email:           Shown as an envelope icon. Leave "" to hide.
-#   link:            Personal or institutional page, shown as "people/Name-Surname". Leave "" to hide.
+#   email:           Shown as an envelope icon. Leave "" until known (the icon then appears greyed out).
+#   link:            Personal or institutional page, opened by the "people/Name-Surname" link.
+#                    Leave "" until known (the label then appears as plain text).
 
 - name: Raffaele Danna
   role: Principal Investigator
-  specialisation: ""
+  specialisation: Economic History, History of Science, History of Mathematics
   photo: /assets/img/team/raffaele-danna.jpg
-  email: ""
-  link: ""
+  email: r.danna@santannapisa.it
+  link: https://rafdanna.com/
 
 - name: Giuliana Freschi
   role: Researcher
-  specialisation: ""
+  specialisation: Specialisation to be added
   photo: ""
   email: ""
   link: ""
 
 - name: Alessandro Brioschi
   role: Researcher
-  specialisation: ""
+  specialisation: Specialisation to be added
   photo: ""
   email: ""
   link: ""
 
 - name: Andrea Papi
   role: Researcher
-  specialisation: ""
+  specialisation: Specialisation to be added
   photo: ""
   email: ""
   link: ""
 
 - name: Jip Van Besouw
   role: Researcher
-  specialisation: ""
+  specialisation: Specialisation to be added
   photo: ""
   email: ""
   link: ""
 
 - name: Francesca Masiero
   role: Researcher
-  specialisation: ""
+  specialisation: Specialisation to be added
   photo: ""
   email: ""
   link: ""
