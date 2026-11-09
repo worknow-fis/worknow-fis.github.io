@@ -1,12 +1,13 @@
-# Team members, in the order they appear on the Team page (three per row).
+# Team members, in the order they appear on the Team page (three per row):
+# the Principal Investigator first, then researchers in alphabetical order of surname.
 #
 #   name:            Full name
 #   role:            Principal Investigator or Researcher
 #   specialisation:  Research areas, separated by commas
 #   photo:           Path of a portrait uploaded to assets/img/team/ (any size; square or 4:5 works best),
 #                    e.g. /assets/img/team/name-surname.jpg. Leave "" to show initials instead.
-#   email:           Shown as an envelope icon. Leave "" until known (the icon then appears greyed out).
-#   link:            Personal or institutional page, opened by the "people/Name-Surname" link.
+#   email:           Shown on its own line with an envelope icon. Leave "" until known ("Email to be added" is shown).
+#   link:            Personal or institutional page, opened by the "people/Name-Surname" link on its own line.
 #                    Leave "" until known (the label then appears as plain text).
 
 - name: Raffaele Danna
@@ -16,6 +17,13 @@
   email: r.danna@santannapisa.it
   link: https://rafdanna.com/
 
+- name: Alessandro Brioschi
+  role: Researcher
+  specialisation: Specialisation to be added
+  photo: ""
+  email: ""
+  link: ""
+
 - name: Giuliana Freschi
   role: Researcher
   specialisation: Specialisation to be added
@@ -23,7 +31,7 @@
   email: ""
   link: ""
 
-- name: Alessandro Brioschi
+- name: Francesca Masiero
   role: Researcher
   specialisation: Specialisation to be added
   photo: ""
@@ -38,13 +46,6 @@
   link: ""
 
 - name: Jip Van Besouw
-  role: Researcher
-  specialisation: Specialisation to be added
-  photo: ""
-  email: ""
-  link: ""
-
-- name: Francesca Masiero
   role: Researcher
   specialisation: Specialisation to be added
   photo: ""

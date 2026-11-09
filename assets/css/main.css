@@ -253,12 +253,11 @@ main { padding-block: var(--s7) var(--s8); }
 .person h3 { font-family: var(--f-display); font-weight: 400; font-size: var(--t-xl); line-height: 1.15; }
 .person .role { font-family: var(--f-ui); font-size: var(--t-xs); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
 .person .spec { font-size: var(--t-sm); color: var(--muted); }
-.contact { display: flex; align-items: center; gap: var(--s3); margin-top: var(--s2); font-family: var(--f-ui); font-size: var(--t-sm); }
-.contact .mail { display: inline-grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; color: var(--ink); }
-.contact .mail:hover { color: var(--accent); border-color: var(--accent); }
-.people-link { overflow-wrap: anywhere; }
-.contact .is-empty { color: var(--muted); opacity: .55; }
-span.mail.is-empty { border-style: dashed; }
+.contact { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; gap: var(--s2); font-family: var(--f-ui); font-size: var(--t-sm); }
+.contact li { display: flex; align-items: center; gap: var(--s2); min-width: 0; }
+.contact .ico { flex: none; color: var(--muted); }
+.contact a { overflow-wrap: anywhere; }
+.contact .is-empty { color: var(--muted); opacity: .6; }
 @media (max-width: 900px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s6) var(--s5); } }
 @media (max-width: 480px) { .people { grid-template-columns: 1fr; } .portrait { max-width: 22rem; } }
 
