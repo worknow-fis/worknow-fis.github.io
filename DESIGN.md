@@ -12,7 +12,7 @@ There is **one graphic motif**: the WorKnow logo, a quadrant inscribed *Working 
 
 Named after Tuscan materials. Contrast ratios are measured against the page ground and meet WCAG AA for normal text; most meet AAA.
 
-| Token | Name | Light | Dark | Use | Contrast (light / dark) |
+| Token | Name | Colour | Dark (unused) | Use | Contrast (light / dark) |
 |---|---|---|---|---|---|
 | `--marmo` → `--bg` | Carrara marble | `#f8f7f4` | `#15171a` | Page ground | — |
 | `--pietra` → `--surface` | Pietra serena | `#ebeeeb` | `#1e2124` | Quiet surfaces: footer, project facts, acknowledgement box | — |
@@ -25,7 +25,7 @@ Named after Tuscan materials. Contrast ratios are measured against the page grou
 Rules:
 - **Crimson is the only accent.** Burnt sienna marks time (what is coming next) and is never used for decoration.
 - **Logos always sit on white plates**, in both themes, so funders’ marks are never recoloured.
-- **The dark theme follows the visitor’s system setting.** It is a separate palette, not an inverted one.
+- **The site is always shown in the light palette**, whatever the visitor’s device setting. The dark values in the table are kept for reference only.
 
 ## 3. Typography
 

@@ -57,19 +57,6 @@
   color-scheme: light;
 }
 
-/* ---------- Dark theme: follows the visitor's system setting ---------- */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #15171a; --surface: #1e2124; --ink: #ebe7e2; --muted: #a4a9ad; --rule: #30343a;
-    --accent: #e3929e; --accent-soft: #2e1e23; --flag: #dba467; --logo-filter: invert(1);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #15171a; --surface: #1e2124; --ink: #ebe7e2; --muted: #a4a9ad; --rule: #30343a;
-  --accent: #e3929e; --accent-soft: #2e1e23; --flag: #dba467; --logo-filter: invert(1);
-  color-scheme: dark;
-}
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
