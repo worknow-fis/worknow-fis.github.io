@@ -1,23 +1,43 @@
-# Publications. They are sorted newest first automatically.
+# Publications, shown in the order of this file: put the newest at the top.
 #
 #   type:     Article, Working paper, Book chapter, Book, Dataset…
-#   year:     2026 (always a number; for forthcoming work use the expected year
+#   year:     2026 (a number; for forthcoming work use the expected year
 #             and write "Forthcoming" in the "in" field)
 #   authors:  Surname, Name, and Name Surname
 #   title:    Title without a final full stop
 #   in:       Where it appeared. Use *asterisks* for italics, e.g.
 #             "*Journal of Economic History* 86 (2): 1–30"
-#   url:      Link to the open-access version or the publisher (optional)
-#   oa:       true if open access
-#
-# To add the first publication, delete the [] line and copy this pattern:
-#
-# - type: Article
-#   year: 2026
-#   authors: Danna, Raffaele
-#   title: Title of the article
-#   in: "*Journal Name* 00 (0): 00–00"
-#   url: https://doi.org/10.xxxx/xxxxx
-#   oa: true
+#   doi:      optional, just the DOI itself, e.g. 10.57617/gal-125
+#   url:      optional link to the article page (if there is no DOI, or in addition)
+#   pdf:      optional direct link to the PDF
+#   oa:       true if free to read (open access)
 
-[]
+- type: Article
+  year: 2026
+  authors: Danna, Raffaele
+  title: "Knowledge in use: Books of the mechanical arts as objects and sources of knowledge in late medieval and early modern Europe"
+  in: "*Galilæana: Studies in Renaissance and Early Modern Science* 23 (2): 7–34"
+  doi: 10.57617/gal-125
+  url: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/125
+  pdf: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/125/89
+  oa: true
+
+- type: Article
+  year: 2026
+  authors: Papi, Andrea
+  title: "Crafting practical mathematics: The making of an abacus manual"
+  in: "*Galilæana: Studies in Renaissance and Early Modern Science* 23 (2): 109–132"
+  doi: 10.57617/gal-124
+  url: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/124
+  pdf: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/124/86
+  oa: true
+
+- type: Article
+  year: 2026
+  authors: van Besouw, Jip
+  title: "Projecting and painting: Codification and circulation of optical knowledge, 1568–1711"
+  in: "*Galilæana: Studies in Renaissance and Early Modern Science* 23 (2): 197–228"
+  doi: 10.57617/gal-130
+  url: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/130
+  pdf: https://gal-studies.museogalileo.it/index.php/galilaeana/article/view/130/83
+  oa: true

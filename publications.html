@@ -4,7 +4,7 @@ title: Publications
 permalink: /publications/
 description: Articles, working papers and books produced by the WorKnow project.
 ---
-{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign pubs = site.data.publications -%}
 {%- assign types = site.data.publications | map: "type" | uniq -%}
 <div class="page">
   <header class="page-head">

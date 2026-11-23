@@ -3,11 +3,12 @@
 <li class="pub" data-type="{{ p.type }}">
   <span class="yr">{{ p.year }}</span>
   <div class="cite">
-    <span class="cite-text">{{ p.authors }}. {{ p.year }}. {% if p.type == "Book" %}<em>{{ p.title }}</em>.{% else %}“{{ p.title }}.”{% endif %} {% if p.in %}{{ p.in | markdownify | remove: "<p>" | remove: "</p>" | strip }}.{% endif %}</span>
+    <p class="cite-text">{{ p.authors }}. {{ p.year }}. {% if p.type == "Book" %}<em>{{ p.title }}</em>.{% else %}“{{ p.title }}.”{% endif %} {% if p.in %}{{ p.in | markdownify | remove: "<p>" | remove: "</p>" | strip }}.{% endif %}{% if p.doi %} <a class="doi" href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">https://doi.org/{{ p.doi }}</a>.{% endif %}</p>
     <div class="tools">
       <span class="chip">{{ p.type }}</span>
       {%- if p.oa %}<span class="chip oa">Open access</span>{% endif %}
-      {%- if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">Read</a>{% endif %}
+      {%- if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">Read the article</a>{% elsif p.doi %}<a href="https://doi.org/{{ p.doi }}" target="_blank" rel="noopener">Read the article</a>{% endif %}
+      {%- if p.pdf %}<a href="{{ p.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
       <button class="linkbtn" type="button" data-copy-cite>Copy citation</button>
     </div>
   </div>

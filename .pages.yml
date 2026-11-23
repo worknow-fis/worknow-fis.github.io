@@ -147,8 +147,14 @@ content:
       - name: in
         label: Where it appeared (use *asterisks* for italics)
         type: string
+      - name: doi
+        label: DOI (e.g. 10.57617/gal-125)
+        type: string
       - name: url
-        label: Link (DOI or open-access copy)
+        label: Link to the article page
+        type: string
+      - name: pdf
+        label: Direct link to the PDF
         type: string
       - name: oa
         label: Open access

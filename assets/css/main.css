@@ -225,8 +225,10 @@ main { padding-block: var(--s7) var(--s8); }
 /* ---------- Publications ---------- */
 .pub { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: var(--s4); padding-block: var(--s4); border-bottom: 1px solid var(--rule); }
 .pub .yr { font-family: var(--f-ui); font-variant-numeric: tabular-nums; font-weight: 600; font-size: var(--t-sm); color: var(--muted); padding-top: 3px; }
-.pub .cite { min-width: 0; overflow-wrap: anywhere; }
-.pub .tools { display: flex; gap: var(--s3); flex-wrap: wrap; align-items: center; margin-top: var(--s2); font-family: var(--f-ui); font-size: var(--t-xs); }
+.pub .cite { min-width: 0; overflow-wrap: anywhere; max-width: 46rem; }
+.pub .cite-text { line-height: 1.55; }
+.pub .cite-text .doi { font-family: var(--f-ui); font-size: .85em; }
+.pub .tools { display: flex; gap: var(--s4); flex-wrap: wrap; align-items: center; margin-top: var(--s2); font-family: var(--f-ui); font-size: var(--t-xs); }
 .chip { font-family: var(--f-ui); font-size: var(--t-xs); font-weight: 600; letter-spacing: .04em; color: var(--muted); border: 1px solid var(--rule); border-radius: 2px; padding: 2px 6px; }
 .chip.oa { color: var(--accent); border-color: var(--accent); }
 .linkbtn { font: 500 var(--t-xs) var(--f-ui); color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .18em; }

@@ -63,7 +63,7 @@ title: Home
     </section>
     <section class="block" aria-labelledby="h-latest">
       <div class="block-head"><h2 id="h-latest">Latest publications</h2><a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a></div>
-      {%- assign pubs = site.data.publications | sort: "year" | reverse %}
+      {%- assign pubs = site.data.publications %}
       {%- if pubs.size > 0 %}
       <ul class="pubs">
         {%- for item in pubs limit: 2 %}{% include publication.html p=item %}{% endfor %}
