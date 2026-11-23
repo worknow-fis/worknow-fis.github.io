@@ -4,9 +4,9 @@
 # so the site rebuilds exactly as if the file had been edited on GitHub.
 
 media:
-  input: assets/img
-  output: /assets/img
-  categories: [image]
+  input: assets
+  output: /assets
+  categories: [image, document]
 
 content:
   - name: dissemination
@@ -34,17 +34,40 @@ content:
         label: Organised by WorKnow
         type: boolean
       - name: title
-        label: Title
+        label: Title of the event or of the paper presented
         type: string
         required: true
+      - name: speakers
+        label: Speakers (for talks and papers)
+        type: string
       - name: place
         label: Venue or conference, city
         type: string
+      - name: when
+        label: Room and time (e.g. Room 6, 10:30–13:30)
+        type: string
       - name: text
-        label: Short description (e.g. Presented by…)
+        label: Short description
         type: text
+      - name: programme
+        label: Programme (talks)
+        type: object
+        list: true
+        fields:
+          - name: speaker
+            label: Speaker
+            type: string
+          - name: title
+            label: Title of the talk
+            type: string
+      - name: flyer
+        label: Flyer (PDF)
+        type: file
+      - name: thumb
+        label: Picture of the flyer (about 300 px wide)
+        type: image
       - name: link
-        label: Link to programme, call for papers or slides
+        label: Link to an external page (conference website, slides…)
         type: string
 
   - name: team

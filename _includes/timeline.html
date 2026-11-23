@@ -1,14 +1,9 @@
 {%- comment -%}
-  Dissemination timeline. Items from _data/dissemination.yml in date order, framed by the
-  project's start and end. main.js marks upcoming items and inserts a "Today" marker.
+  Dissemination timeline. Items from _data/dissemination.yml, newest first, grouped by year.
+  main.js marks upcoming items and inserts a "Today" marker between future and past items.
 {%- endcomment -%}
-{%- assign items = site.data.dissemination | sort: "date" -%}
+{%- assign items = site.data.dissemination | sort: "date" | reverse -%}
 <ol class="timeline" id="timeline">
-  <li class="tl-item tl-bookend" data-date="0000-00-00">
-    <span class="tl-dot" aria-hidden="true"></span>
-    <div class="tl-when">{{ site.project.start }}</div>
-    <div class="tl-body"><h3>WorKnow begins</h3><p class="meta">{{ site.project.host }}</p></div>
-  </li>
   {%- assign current_year = "" -%}
   {%- for e in items -%}
     {%- assign y = e.date | date: "%Y" -%}
@@ -16,7 +11,7 @@
   <li class="tl-year"><span>{{ y }}</span></li>
       {%- assign current_year = y -%}
     {%- endif %}
-  <li class="tl-item{% if e.organised %} is-organised{% endif %}" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
+  <li class="tl-item{% if e.organised %} is-organised{% endif %}{% if e.thumb %} has-thumb{% endif %}" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
     <span class="tl-dot" aria-hidden="true"></span>
     <time class="tl-when" datetime="{{ e.date | date: '%Y-%m-%d' }}">
       {%- assign m1 = e.date | date: "%m" -%}{%- assign m2 = e.end_date | date: "%m" -%}
@@ -27,14 +22,29 @@
     <div class="tl-body">
       <span class="label">{{ e.type }}{% if e.organised %} · <span class="org">Organised by WorKnow</span>{% endif %}<span class="tl-badge" hidden> · Upcoming</span></span>
       <h3>{{ e.title }}</h3>
-      <p class="meta">{{ e.place }}{% if e.link %} · <a href="{{ e.link }}" target="_blank" rel="noopener">Details</a>{% endif %}</p>
+      {%- if e.speakers %}<p class="speakers">{{ e.speakers }}</p>{% endif %}
+      <p class="meta">{{ e.place }}{% if e.when %} · {{ e.when }}{% endif %}</p>
       {%- if e.text %}<p>{{ e.text }}</p>{% endif %}
+      {%- if e.programme %}
+      <ol class="programme">
+        {%- for t in e.programme %}
+        <li><span class="who">{{ t.speaker }}</span> <span class="what">{{ t.title }}</span></li>
+        {%- endfor %}
+      </ol>
+      {%- endif %}
+      {%- if e.flyer or e.link %}
+      <p class="tl-links">
+        {%- if e.flyer %}<a href="{{ e.flyer | relative_url }}" target="_blank" rel="noopener">Flyer and programme (PDF)</a>{% endif %}
+        {%- if e.flyer and e.link %} · {% endif %}
+        {%- if e.link %}<a href="{{ e.link }}" target="_blank" rel="noopener">Details</a>{% endif %}
+      </p>
+      {%- endif %}
     </div>
+    {%- if e.thumb %}
+    <a class="tl-thumb" href="{{ e.flyer | default: e.thumb | relative_url }}" target="_blank" rel="noopener" aria-label="Open the flyer for {{ e.title }}">
+      <img src="{{ e.thumb | relative_url }}" alt="" loading="lazy" width="300" height="375">
+    </a>
+    {%- endif %}
   </li>
   {%- endfor %}
-  <li class="tl-item tl-bookend" data-date="9999-12-31">
-    <span class="tl-dot" aria-hidden="true"></span>
-    <div class="tl-when">{{ site.project.end }}</div>
-    <div class="tl-body"><h3>WorKnow concludes</h3><p class="meta">End of the three-year grant</p></div>
-  </li>
 </ol>

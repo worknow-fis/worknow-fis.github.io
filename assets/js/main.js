@@ -33,24 +33,26 @@
     if (empty) empty.hidden = shown > 0;
   });
 
-  /* Events timeline: mark upcoming events and place a "Today" marker */
+  /* Dissemination timeline (newest first): mark upcoming items and place a
+     "Today" marker between the last upcoming item and the first past one */
   var tl = $("#timeline");
   if (tl) {
-    var items = $$(".tl-item", tl), firstFuture = null;
+    var items = $$(".tl-item", tl), firstPast = null, anyFuture = false;
     items.forEach(function (li) {
-      var bookend = li.classList.contains("tl-bookend");
-      if (!bookend && isUpcoming(li)) {
+      if (isUpcoming(li)) {
+        anyFuture = true;
         li.classList.add("is-upcoming");
         var badge = $(".tl-badge", li); if (badge) badge.hidden = false;
-      }
-      if (!firstFuture && li.dataset.date >= today) firstFuture = li;
+      } else if (!firstPast) { firstPast = li; }
     });
-    if (firstFuture) {
+    if (anyFuture) {
       var marker = document.createElement("li");
       marker.className = "tl-today";
       marker.innerHTML = "<span>Today</span>";
-      var prev = firstFuture.previousElementSibling;
-      tl.insertBefore(marker, prev && prev.classList.contains("tl-year") ? prev : firstFuture);
+      if (firstPast) {
+        var prev = firstPast.previousElementSibling;
+        tl.insertBefore(marker, prev && prev.classList.contains("tl-year") ? prev : firstPast);
+      } else { tl.appendChild(marker); }
     }
   }
 

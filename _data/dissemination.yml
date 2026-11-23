@@ -1,25 +1,61 @@
 # Dissemination: workshops and events organised by WorKnow, and presentations
 # where the team presents the project's work. One list for everything.
-# Order doesn't matter: the page sorts by date and marks upcoming items automatically.
+# Order doesn't matter: the page shows the newest first and marks upcoming items automatically.
 #
 #   date:       YYYY-MM-DD
 #   end_date:   optional, for items lasting more than one day
-#   type:       Workshop, Conference, Seminar, Conference paper, Invited talk, Public lecture…
+#   type:       Workshop, Conference paper, Seminar, Invited talk, Public lecture…
 #   organised:  true if WorKnow organised it (shows "Organised by WorKnow")
-#   title:      Title of the event or of the paper presented
+#   title:      Title of the event, or of the paper presented
+#   speakers:   optional, who presented (for talks and papers)
 #   place:      Venue or conference, city
-#   text:       optional short description, e.g. "Presented by Name Surname."
-#   link:       optional link to the programme, call for papers or slides
-#
-# To add the first item, delete the [] line and copy this pattern:
-#
-# - date: 2026-11-19
-#   end_date: 2026-11-20
-#   type: Workshop
-#   organised: true
-#   title: Practitioners and practical knowledge, 1300–1800
-#   place: Sant’Anna School of Advanced Studies, Pisa
-#   text: Two-day workshop bringing together historians of science and economic historians.
-#   link: https://example.org/programme.pdf
+#   when:       optional, room and time, e.g. "Room 6, 10:30–13:30"
+#   text:       optional short description
+#   programme:  optional list of talks, each with "speaker" and "title"
+#   flyer:      optional PDF uploaded to assets/docs/
+#   thumb:      optional picture of the flyer uploaded to assets/img/flyers/ (about 300 px wide)
+#   link:       optional link to an external page (conference website, slides…)
 
-[]
+- date: 2026-11-17
+  type: Seminar
+  speakers: Raffaele Danna
+  title: "The Craft of Indo-Arabic Numerals: Practical Arithmetic and Economic Practice in Western Europe since the Emergence of Commercial Capitalism and Proto-Symbolic Algebra"
+  place: Max Planck Institute for the History of Science, Berlin
+
+- date: 2026-10-21
+  type: Workshop
+  organised: true
+  title: WorKnow meets Maxine Berg
+  place: Scuola Superiore Sant’Anna, Pisa
+  when: Room 6, 10:30–13:30
+  text: A morning in which the WorKnow team presented its research to the economic historian Maxine Berg.
+  programme:
+    - speaker: Jip van Besouw
+      title: "Money problems: Struggling with value, coins, and precision in late medieval and early modern Europe"
+    - speaker: Raffaele Danna
+      title: "Reading between the numbers: What we can learn from the uses of numerals in European accounts (14th–17th centuries)"
+    - speaker: Giuliana Freschi
+      title: "Women in the making of practical knowledge: Midwifery manuals in Europe, 1600–1800"
+    - speaker: Francesca Masiero
+      title: "Straddling the learned/practical divide: the uses of mathematics in the 15th-century Venetian state"
+    - speaker: Andrea Papi
+      title: "State capacity in miniature: A late medieval case of state-building and engineering expertise"
+  flyer: /assets/docs/2026-10-21-worknow-meets-maxine-berg.pdf
+  thumb: /assets/img/flyers/2026-10-21-worknow-meets-maxine-berg.jpg
+
+- date: 2026-09-21
+  type: Workshop
+  organised: true
+  title: Discussing mathematics and societies between Western Asia and Europe
+  place: Department of Mathematics and Computer Science “Ulisse Dini”, University of Florence
+  when: Aula Tricerri, 10:30–16:00
+  text: A day of roundtables on practical and scholarly mathematics, bringing together the WorKnow, MediMath and Manoscritti Bombelliani projects, with participants from the universities of Florence, Bern and Rome Tor Vergata.
+  flyer: /assets/docs/2026-09-21-workshop-florence-history-of-mathematics.pdf
+  thumb: /assets/img/flyers/2026-09-21-workshop-florence-history-of-mathematics.jpg
+
+- date: 2026-07-07
+  end_date: 2026-07-10
+  type: Conference paper
+  speakers: Raffaele Danna and Jip van Besouw
+  title: "Money problems: Struggling with value, coins, and precision in late medieval and early modern Europe"
+  place: "How much? Global histories and material cultures of accountancy and meteorology, ICMS, Edinburgh"

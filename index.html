@@ -42,21 +42,24 @@ title: Home
 
   <div class="split">
     <section class="block" aria-labelledby="h-next">
-      <div class="block-head"><h2 id="h-next">Coming up</h2><a class="more" href="{{ '/dissemination/' | relative_url }}">Dissemination →</a></div>
-      {%- assign items = site.data.dissemination | sort: "date" %}
-      <ul class="events" data-upcoming-only="3">
-        {%- for e in items %}
+      <div class="block-head"><h2 id="h-next">Dissemination</h2><a class="more" href="{{ '/dissemination/' | relative_url }}">All activities →</a></div>
+      {%- assign items = site.data.dissemination | sort: "date" | reverse %}
+      {%- if items.size > 0 %}
+      <ul class="events">
+        {%- for e in items limit: 3 %}
         <li class="event" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
           <time class="date" datetime="{{ e.date | date: '%Y-%m-%d' }}"><span class="d">{{ e.date | date: "%-d" }}</span><span class="m">{{ e.date | date: "%b" }}</span><span class="y">{{ e.date | date: "%Y" }}</span></time>
           <div class="event-body">
             <span class="label">{{ e.type }}{% if e.organised %} · Organised by WorKnow{% endif %}</span>
             <h3>{{ e.title }}</h3>
-            <span class="meta">{{ e.place }}</span>
+            <span class="meta">{% if e.speakers %}{{ e.speakers }} · {% endif %}{{ e.place }}</span>
           </div>
         </li>
         {%- endfor %}
       </ul>
-      <p class="empty" data-empty{% if items.size > 0 %} hidden{% endif %}>Nothing scheduled at the moment. Check back soon.</p>
+      {%- else %}
+      <p class="empty">Workshops, events and presentations will appear here.</p>
+      {%- endif %}
     </section>
     <section class="block" aria-labelledby="h-latest">
       <div class="block-head"><h2 id="h-latest">Latest publications</h2><a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a></div>
